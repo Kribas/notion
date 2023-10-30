@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft } from "lucide-react";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 export const Navigation = () => {
   return (
