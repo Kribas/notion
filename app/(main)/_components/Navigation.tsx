@@ -4,6 +4,8 @@ import { ChevronLeft } from "lucide-react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 export const Navigation = () => {
+  console.log("Initial commit");
+
   return (
     <>
       <aside className="group/sidebar h-full bg-secondary overflow-y-auto relative flex w-60 flex-col z-[99999]">
