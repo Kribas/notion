@@ -5,6 +5,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import UserItem from "./UserItem";
 
 export const Navigation = () => {
   const pathName = usePathname();
@@ -52,8 +53,6 @@ export const Navigation = () => {
       navbarRef.current.style.setProperty("width", `calc(100%-${newWidth}px)`);
     }
   };
-
-  console.log("Initial commit");
 
   const handleMouseUp = () => {
     isResizingRef.current = false;
@@ -111,7 +110,7 @@ export const Navigation = () => {
           <ChevronLeft className="h-6 w-6" />
         </div>
         <div>
-          <p>Action Items</p>
+          <UserItem />
         </div>
         <div className="mt-4">
           <p>Documents</p>
