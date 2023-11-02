@@ -53,6 +53,8 @@ export const Navigation = () => {
     }
   };
 
+  console.log("Initial commit");
+
   const handleMouseUp = () => {
     isResizingRef.current = false;
     document.removeEventListener("mousemove", handleMouseMove);
