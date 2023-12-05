@@ -35,6 +35,8 @@ export const Item: React.FC<ItemProps> = ({
 }) => {
   const ChevronIcon = expanded ? ChevronDown : ChevronRight;
 
+  console.log("Initial commit");
+
   return (
     <div
       onClick={onClick}
