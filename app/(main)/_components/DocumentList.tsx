@@ -41,6 +41,8 @@ export const DocumentList = ({
     router.push(`/documents/${docuementId}`);
   };
 
+  console.log("Initial commit");
+
   if (documents === undefined) {
     return (
       <>
