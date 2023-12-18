@@ -2,7 +2,7 @@ import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 import { Id } from "./_generated/dataModel";
 
-const getData = mutation({
+export const archive = mutation({
   args: {
     id: v.id("documents"),
   },
@@ -31,11 +31,21 @@ const getData = mutation({
           q.eq("userId", userId).eq("parentDocument", documentId)
         )
         .collect();
+
+      for (const child of children) {
+        await ctx.db.patch(child._id, {
+          isArchived: true,
+        });
+
+        await recursiveArchive(child._id);
+      }
     };
 
     const document = await ctx.db.patch(args.id, {
       isArchived: true,
     });
+
+    recursiveArchive(args.id);
 
     return document;
   },
