@@ -63,6 +63,8 @@ const TrashBox = () => {
     );
   }
 
+  console.log("Initial commit");
+
   return (
     <div className="text-sm">
       <div className="flex items-center gap-x-1 p-2">
