@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useMutation, useQuery } from "convex/react";
-import { Search, Undo } from "lucide-react";
+import { Search, Trash, Undo } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner";
@@ -94,7 +94,14 @@ const TrashBox = () => {
                 role="button"
                 className="rounded-sm p-2 hover:bg-neutral-200"
               >
-                <Undo />
+                <Undo className="h-4 w-4 text-muted-foreground" />
+              </div>
+              <div
+                role="button"
+                onClick={() => onRemove(document._id)}
+                className="rounded-sm p-2 hover:bg-neutral-200"
+              >
+                <Trash className="h-4 w-4 text-muted-foreground" />
               </div>
             </div>
           </div>
