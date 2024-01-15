@@ -28,8 +28,6 @@ const TrashBox = () => {
     router.push(`/documents/${documentId}`);
   };
 
-  console.log("Initial commit");
-
   const onRestore = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     documentId: Id<"documents">
