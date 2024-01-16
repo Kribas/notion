@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/popover";
 import TrashBox from "./TrashBox";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 export const Navigation = () => {
   const pathName = usePathname();
@@ -38,6 +39,7 @@ export const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(isMobile);
   const search = useSearch();
+  const settings = useSettings();
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
@@ -144,7 +146,7 @@ export const Navigation = () => {
         <div>
           <UserItem />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
-          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
 
           <Item onClick={handleCreate} label="New Item" icon={PlusCircle} />
         </div>
