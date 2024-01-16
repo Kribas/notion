@@ -7,6 +7,8 @@ import { DialogContent } from "@radix-ui/react-dialog";
 export const SettingsModal = () => {
   const settings = useSettings();
 
+  console.log("Initial commit");
+
   return (
     <Dialog open={settings.isOpen} onOpenChange={settings.onClose}>
       <DialogContent>
