@@ -26,7 +26,7 @@ export default function Logo() {
         height="40"
       />
 
-      <p className={cn("font-semibold", font.className)}>Jotion</p>
+      <p className={cn("font-semibold", font.className)}>Notion</p>
     </div>
   );
 }

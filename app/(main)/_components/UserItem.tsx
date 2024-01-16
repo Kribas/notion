@@ -56,7 +56,7 @@ export default function UserItem() {
               </Avatar>
             </div>
             <div className="space-y-1">
-              <p className="text-sm line-clamp-1">{user?.fullName}'s Jotion</p>
+              <p className="text-sm line-clamp-1">{user?.fullName}'s Notion</p>
             </div>
           </div>
         </div>

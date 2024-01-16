@@ -34,7 +34,7 @@ export default function Navbar() {
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button size="sm">Get Jotion Free</Button>
+              <Button size="sm">Get Notion Free</Button>
             </SignInButton>
           </>
         )}
@@ -42,7 +42,7 @@ export default function Navbar() {
         {isAuthenticated && !isLoading && (
           <>
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter Jotion</Link>
+              <Link href="/documents">Enter Notion</Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>

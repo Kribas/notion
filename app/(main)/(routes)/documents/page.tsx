@@ -43,7 +43,7 @@ export default function DocumentsPage() {
       />
 
       <h2 className="font-medium text-lg">
-        Welcome to {user?.firstName}'s Jotion
+        Welcome to {user?.firstName}'s Notion
       </h2>
       <Button onClick={onCreate}>
         <PlusCircle className="h-4 w-4 mr-2" />
