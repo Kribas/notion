@@ -11,6 +11,8 @@ interface MenuProps {
   documentId: Id<"documents">;
 }
 
+console.log("Initial commit");
+
 export const Menu = ({ documentId }: MenuProps) => {
   const user = useUser();
   const archive = useMutation(api.documents.archive);
