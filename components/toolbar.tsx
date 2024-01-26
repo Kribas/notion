@@ -3,16 +3,36 @@
 import { Doc } from "@/convex/_generated/dataModel";
 import { IconPicker } from "./icon-picker";
 import { Button } from "./ui/button";
-import { Smile, X } from "lucide-react";
+import { ImageIcon, Smile, X } from "lucide-react";
+import { useMutation, useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { ElementRef, useRef, useState } from "react";
 
 interface ToolbarProps {
   initialData: Doc<"documents">;
   preview?: boolean;
 }
 
-console.log("Initial commit");
-
 export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
+  const update = useMutation(api.documents.update);
+  const inputRef = useRef<ElementRef<"textarea">>(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [value, setValue] = useState(initialData.title);
+
+  const enableInput = () => {
+    if (preview) return;
+
+    setIsEditing(true);
+    setTimeout(() => {
+      setValue(initialData.title);
+      inputRef.current?.focus;
+    }, 0);
+  };
+
+  const disableInput = () => {
+    setIsEditing(false);
+  };
+
   return (
     <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
@@ -35,16 +55,28 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
         <p className="text-6xl pt-6">{initialData.icon}</p>
       )}
       <div className="opacity-0 group-hover:opacity-100 flex items-center gap-x-1 py-4">
-        {!initialData && !preview && (
+        {!initialData.icon && !preview && (
           <IconPicker asChild onChange={() => {}}>
             <Button
               className="text-muted-foreground text-xs"
               variant="outline"
               size="sm"
             >
-              <Smile className="h-4 w-4 mr-2">Add Icon</Smile>
+              <Smile className="h-4 w-4 mr-2" />
+              Add Icon
             </Button>
           </IconPicker>
+        )}
+        {!initialData.coverImage && !preview && (
+          <Button
+            onClick={() => {}}
+            className="text-muted-foreground text-xs"
+            variant="outline"
+            size="sm"
+          >
+            <ImageIcon className="h-4 w-4 mr-2" />
+            Add Cover
+          </Button>
         )}
       </div>
     </div>
