@@ -10,6 +10,8 @@ interface ToolbarProps {
   preview?: boolean;
 }
 
+console.log("Initial commit");
+
 export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
   return (
     <div className="pl-[54px] group relative">
