@@ -33,8 +33,6 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
     setIsEditing(false);
   };
 
-  console.log("initial commit");
-
   return (
     <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
