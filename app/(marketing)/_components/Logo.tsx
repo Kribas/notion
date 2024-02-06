@@ -5,7 +5,7 @@ import React from "react";
 
 const font = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: "400",
 });
 
 export default function Logo() {
