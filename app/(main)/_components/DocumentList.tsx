@@ -53,6 +53,8 @@ export const DocumentList = ({
     );
   }
 
+  console.log("Initial commit");
+
   return (
     <>
       <p
