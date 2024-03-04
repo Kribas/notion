@@ -25,7 +25,6 @@ export const Cover = ({ url, preview }: CoverProps) => {
       id: params.documentId as Id<"documents">,
     });
   };
-  console.log("Initial commit");
 
   return (
     <div
