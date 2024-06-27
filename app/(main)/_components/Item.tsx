@@ -80,7 +80,7 @@ export const Item: React.FC<ItemProps> = ({
         if (!expanded) {
           onExpand?.();
         }
-        // router.push(`/documents/${documentId}`);
+        router.push(`/documents/${documentId}`);
       }
     );
 

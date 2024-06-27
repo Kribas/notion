@@ -7,7 +7,7 @@ import { Toolbar } from "@/components/toolbar";
 import { Cover } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";
 import dynamic from "next/dynamic";
-import { Editor } from "@/components/editor";
+const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
 
 interface DocumentIdProps {
   params: {
