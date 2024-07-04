@@ -9,7 +9,7 @@ import {
 import { api } from "@/convex/_generated/api";
 import { Doc } from "@/convex/_generated/dataModel";
 import { useMutation } from "convex/react";
-import { Globe } from "lucide-react";
+import { Check, Copy, Globe } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -36,8 +36,6 @@ export const Publish = ({ initialData }: PublishProps) => {
       error: "Error publishing note.",
     });
   };
-
-  console.log("Initial commit");
 
   const onUnPublish = () => {
     setIsSubmitting(false);
@@ -74,7 +72,40 @@ export const Publish = ({ initialData }: PublishProps) => {
       </PopoverTrigger>
       <PopoverContent className="w-72" align="end" alignOffset={8} forceMount>
         {initialData.isPublished ? (
-          <div>Published</div>
+          <div className="space-y-4">
+            <div className="flex items-center gap-x-2">
+              <Globe className="text-sky-500 animate-pulse h-4 w-4" />
+              <p className="text-xs font-medium text-sky-500">
+                This note is live on web
+              </p>
+            </div>
+            <div className="flex items-center">
+              <input
+                disabled
+                className="flex-1 px-2 text-xs border rounded-l-md h-8 bg-muted truncate"
+                value={url}
+              />
+              <Button
+                className="h-8 rounded-l-none"
+                disabled={copied}
+                onClick={onCopy}
+              >
+                {copied ? (
+                  <Check className="h-4 w-4" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
+              </Button>
+            </div>
+            <Button
+              onClick={onUnPublish}
+              disabled={isSubmitting}
+              size="sm"
+              className="w-full text-xs"
+            >
+              Unpublish
+            </Button>
+          </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
             <Globe className="h-8 w-8 text-muted-foreground mb-2" />
