@@ -37,6 +37,8 @@ export const Publish = ({ initialData }: PublishProps) => {
     });
   };
 
+  console.log("Initial commit");
+
   const onUnPublish = () => {
     setIsSubmitting(false);
     const promise = update({
